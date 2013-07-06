@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* 
+CSS Document
+ 
+By Cassandra Morath
+
+vfw project 2
+*/
+@font-face{
+	font-family: "Times New Roman", Times, serif, Arial, Helvetica, sans-serif, "Comic Sans MS", cursive;
+	font-weight: normal;
+	font-style: normal;
+}
+html,body{
+	margin:0px;
+	padding:0px;
+}
+body{
+	text-align:center;
+	font: 100% Georgia, "Times New Roman", Times, serif;
+	margin-top:25px;
+}
+h1, h2, h3, h4, h5, h6, p, div, ul{
+	margin:0px;
+	padding:0px;
+}
+p{
+	padding:10px;
+	margin:20px;
+	text-align:left;
+	color:#3F3;
+}
+a{
+	color:#C03;
+	text-decoration:none;
+}
+a:hover{
+	color: #cb7d20;
+	border-bottom: 1px dashed #cb7d20;
+}
+li{
+	list-style-type:none;
+}
+input[type="text"]{
+	width:200px;
+	display:block;
+	margin-bottom:10px;
+	background-color:white;
+}
+textarea{
+	width:200px;
+	display:block;
+	margin-bottom:10px;
+	background-color:white;
+}
+/*.slider{
+}      Need to figure out how to move the whole slider bar to center */
+li{
+	text-align:center;
+}
