@@ -6,22 +6,27 @@ By Cassandra Morath
 
 vfw project 2
 */
+<div style="overflow:auto; height:250px; width:300px;">
+
 @font-face{
-	font-family: "Times New Roman", Times, serif, Arial, Helvetica, sans-serif, "Comic Sans MS", cursive;
+	font-family: "New Times Roman", Times, serif, Arial, Helvetica, sans-serif, "Comic Sans MS", cursive;
 	font-weight: normal;
 	font-style: normal;
 }
-html,body{
-	margin:0px;
-	padding:0px;
-}
 body{
-	text-align:center;
-	font: 100% Georgia, "Times New Roman", Times, serif;
-	margin-top:25px;
+	text-align: center;
+	margin: 0;
+	padding: 25px 0px 0px 30px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 100%;
+	line-height: normal;
 }
+html,body{
+	
+}
+
 h1, h2, h3, h4, h5, h6, p, div, ul{
-	margin:0px;
+	margin:20px;
 	padding:0px;
 }
 p{
@@ -57,4 +62,7 @@ textarea{
 }      Need to figure out how to move the whole slider bar to center */
 li{
 	text-align:center;
+}
+background{
+	color:#999
 }
