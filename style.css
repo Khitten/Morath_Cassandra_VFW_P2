@@ -66,3 +66,63 @@ li{
 background{
 	color:#999
 }
+<!--LaunchPage CSS FIX ME!! -->
+    	<style>
+			background { 
+				margin:1em;
+				color:#999;
+			}
+			body {
+				background-color:#999;
+				background-position:center;
+			}
+			p {
+				margin:1px;
+				padding:1px;
+			    color:#000;
+			}
+			h1 {
+				color:#66F;
+				text-align:center;
+				font-size:30pt;
+				font-family:"Comic Sans MS", cursive;
+			}
+			nav{
+				margin-left:25px;
+				font-family:"Comic Sans MS", cursive;	
+			}
+			img{
+				border:solid;
+				margin:5px;
+				padding:1.5px;	
+			}
+		</style> 
+
+<!-- CSS style Pageadditem FIX ME! -->
+        <style>
+body {background-color:#CCC;
+}
+p {
+margin-left:10px;
+color:#000;
+}
+h1 {
+color:#66F;
+text-align:center;
+font-size:25pt;
+border-color:#66F;
+font-family:"Comic Sans MS", cursive;
+}
+nav{
+margin-left:200px;
+font-family:"Comic Sans MS", cursive;
+}
+li{
+text-align:left;
+color:#66F;
+font-family:"Comic Sans MS", cursive;
+font-size:15px;
+padding:0px;
+line-height:none;
+}
+</style>

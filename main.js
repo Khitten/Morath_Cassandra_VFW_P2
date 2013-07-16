@@ -25,26 +25,38 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 //create select field element and populate with options
 	function chooseBreed(){ 
-		var formTag = document.getElementsByTagName("form"), //form tag is an array of all the form tags.
-			selectLi = $("select"),
-			makeSelect = document.createElement("select");
-			makeSelect.selectAttribute("id" ,"breed");
-		for(var i=0 , j=aBreed.length; i<j; i++) {
-		var pickOption = document.createElement("option");
-		var optionText = aBreed[i];
+		var formTag = document.getElementsByTagName("form"), 
+			selectLi = $('breed'),
+			makeSelect = document.createElement('select');
+			makeSelect.setAttribute("id" ,"breed");
+		for(var i=0 , j=storeBreed.length; i<j; i++) {
+			var pickOption = document.createElement("option");
+			var optionText = storeBreed[i];
 			pickOption.setAttribute("value", optionText);
 			pickOption.innerHTML = optionText;
-			makeSelect.appendChild(pickOption)
+			makeSelect.appendChild(pickOption);
+		
 	}
-selectLi.appendChild(makeSelect);
+	selectLi.appendChild(makeSelect);
 }
 
 function sbutton(){
-	localStorage.setItem("test" , "hello");
+	var id = Math.floor(Math.random()*100000000001);
+	var item = {};
+		item.breed = ["Breeds:", $("breed").value];
+		item.oname = ["Owner's Name:", $("oname").value];
+		item.onotes = ["Owner's Notes:", $("onotes").value];
+		item.pname = ["Pet's Name:", $("pname").value];
+		item.gdate = ["Groom Date:", $("gdate").value];
+		item.slider = ["Difficulty:", $("slider").value];
+		item.gnotes = ["Grooming Notes:", $("gnotes").value];
+		item.pnotes = ["Pet Notes:", $("pnotes").value];
+		item.sex 
+	
 }
 //Variable defaults
-	var aBreed = ["--Choose A Breed--", "Dogs", "Cats" ];
-		chooseBreeds();
+	var storeBreed = ["--Choose A Breed--", "Dogs", "Cats" ];
+	chooseBreed();
 //Set link and submit click events
 	var sbutton = $("dbutton");
 		sbutton.addEventListener("click", getData);
