@@ -16,6 +16,7 @@
 
 //The value should be an array or object that contains all the 
 //values of your form field data.
+
 //Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function(){
 //Get elementById function
@@ -23,6 +24,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var elementId = document.getElementById(x);
 		return elementId;
 	}
+	
 //create select field element and populate with options
 	function chooseBreed(){ 
 		var formTag = document.getElementsByTagName("form"), 
@@ -40,7 +42,16 @@ window.addEventListener("DOMContentLoaded", function(){
 	selectLi.appendChild(makeSelect);
 }
 
-function sbutton(){
+function getSelectedRadio(){
+	var radios = document.forms[0].sex;
+	for(var i=0; i<radios.length; i++){
+		if(radios[i].checked){
+			sexValue = radios[i].value;
+		}
+	}
+}
+
+function storeInfo(){
 	var id = Math.floor(Math.random()*100000000001);
 	var item = {};
 		item.breed = ["Breeds:", $("breed").value];
@@ -51,17 +62,22 @@ function sbutton(){
 		item.slider = ["Difficulty:", $("slider").value];
 		item.gnotes = ["Grooming Notes:", $("gnotes").value];
 		item.pnotes = ["Pet Notes:", $("pnotes").value];
-		item.sex 
-	
+		item.sex = ["Sex:", sexValue]; 
+		//Save data into local storage: use Stringify to convert object to a string. 
+		localStorage.setItem(id, JSON.stringify(item));
+		alert("Pet saved!");
 }
 //Variable defaults
-	var storeBreed = ["--Choose A Breed--", "Dogs", "Cats" ];
+	var storeInfo = ["--Choose A Breed--", "Dogs", "Cats" ],
+		sexValue;
 	chooseBreed();
-//Set link and submit click events
-	var sbutton = $("dbutton");
-		sbutton.addEventListener("click", getData);
+/*Set link and submit click events
+	var dbutton = $("dbutton");
+		dbutton.addEventListener("click", getData);
 	var rbutton = $("rbutton");
-		rbutton.addEventListener("click" , clearLocal);
+		rbutton.addEventListener("click" , clearLocal);*/
 	var sbutton = $("sbutton");
-		sbutton.addEventListener("click" , storeData);
+		sbutton.addEventListener("click" , storeInfo);
+		
+
 });
