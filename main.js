@@ -38,22 +38,20 @@ function getSelectedRadio(){
 function toggleControls(n){
 	switch(n){
 		case "on":
-			$("contactForm").style.display = "none";
+			$("clientInformation").style.display = "none";
 			$("clear").style.display = "inline";
-			$("displayLink").style.display = "none";
+			$("display").style.display = "none";
 			$("addNew").style.display = "inline";
 			break;
 		case "off":
-			e "on":
-			$("contactForm").style.display = "block";
+			$("clientInformation").style.display = "block";
 			$("clear").style.display = "inline";
-			$("displayLink").style.display = "inline";
+			$("display").style.display = "inline";
 			$("addNew").style.display = "none";
 			$("items").style.display = "none";
 			break;
 		default:
-			return false;
-		
+			return false;		
 	}
 	
 }
@@ -77,6 +75,10 @@ function storeInfo(){
 }
 
 function getData(){
+	toggleControls("on");
+	if(localStorage.length === 0){
+		alert("There is no data in local storage.");
+		}
 	//Write data from local storage
 	var makeDiv = document.createElement("div");
 	makeDiv.setAttribute("id","items");
@@ -96,9 +98,20 @@ function getData(){
 		for (var n in obj){
 			var makeSubli = document.createElement("li");
 			makeSubList.appendChild(makeSubli);
-			var optSubText = obj[n][0]+ " "+obj[n][1];
+			var optSubText = obj[n][0] + " "+ obj[n][1];
 			makeSubli.innerHTML = optSubText;
 		}
+	}
+}
+
+function clearLocal(){
+	if(localStorage.length === 0){
+		alert("There is no data to clear.")
+	}else{
+		localStorage.clear();
+		alert("All contacts are deleted.")
+		window.location.reload();
+		return false;
 	}
 }
 
@@ -106,13 +119,13 @@ function getData(){
 	var breedInfo = ["--Choose A Breed--", "Dogs", "Cats" ],
 		sexValue;
 	chooseBreed();
-/*Set link and submit click events
-	var rbutton = $("rbutton");
-		rbutton.addEventListener("click" , clearLocal);*/
-	var dbutton = $("dbutton");
-		dbutton.addEventListener("click", getData);
-	var sbutton = $("sbutton");
-		sbutton.addEventListener("click" , storeInfo);
+	/*Set link and submit click events*/
+	var clear = $("clear");
+		clear.addEventListener("click" , clearLocal);
+	var display = $("display");
+		display.addEventListener("click", getData);
+	var store = $("store");
+		store.addEventListener("click" , storeInfo);
 		
 
 });

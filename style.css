@@ -36,11 +36,10 @@ p{
 	color:#3F3;
 }
 a{
-	color:#C03;
-	text-decoration:none;
+	color:#3FF;
 }
 a:hover{
-	color: #cb7d20;
+	color: #FF0;
 	border-bottom: 1px dashed #cb7d20;
 }
 li{
