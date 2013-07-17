@@ -2,22 +2,6 @@
 //Cassandra Morath
 //VFW Project 2
 //Jan 8, 2013
-
-//Write a function that saves all data input into the form into 
-//Local Storage when the form's submit button is clicked.
-
-//This means the values for your input, select, radio or 
-//checkboxes etc.
-
-//You should also save a key(random number) for your 
-//values(array or object). Each saved entry will be a key:value pair.
-
-//The key should be a random number which will create a unique id.
-
-//The value should be an array or object that contains all the 
-//values of your form field data.
-
-//Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function(){
 //Get elementById function
 	function $(x){
@@ -28,12 +12,12 @@ window.addEventListener("DOMContentLoaded", function(){
 //create select field element and populate with options
 	function chooseBreed(){ 
 		var formTag = document.getElementsByTagName("form"), 
-			selectLi = $('breed'),
+			selectLi = $('breed');
 			makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id" ,"breed");
-		for(var i=0 , j=storeBreed.length; i<j; i++) {
+		for(var i=0 , j=storeInfo.length; i<j; i++) {
 			var pickOption = document.createElement("option");
-			var optionText = storeBreed[i];
+			var optionText = storeInfo[i];
 			pickOption.setAttribute("value", optionText);
 			pickOption.innerHTML = optionText;
 			makeSelect.appendChild(pickOption);
@@ -52,6 +36,7 @@ function getSelectedRadio(){
 }
 
 function storeInfo(){
+	
 	var id = Math.floor(Math.random()*100000000001);
 	var item = {};
 		item.breed = ["Breeds:", $("breed").value];
@@ -64,18 +49,45 @@ function storeInfo(){
 		item.pnotes = ["Pet Notes:", $("pnotes").value];
 		item.sex = ["Sex:", sexValue]; 
 		//Save data into local storage: use Stringify to convert object to a string. 
-		localStorage.setItem(id, JSON.stringify(item));
-		alert("Pet saved!");
+		
+    localStorage.setItem(id, JSON.stringify(item));
+	alert("Pet saved!");		
 }
+
+function getData(){
+	//Write data from local storage
+	var makeDiv = document.createElement("div");
+	makeDiv.setAttribute("id","items");
+	var makeList = document.createElement("ul");
+	makeDiv.appendChild(makeList);
+	document.body.appendChild(makeDiv);
+	for(var i=0, len=localStorage.length; i<len; i++){
+		var makeli = document.createElement("li");
+		makeList.appendChild(makeli);
+		var key = localStorage.key(i);
+		var value = localStorage.getItem(key);
+		//convert the string from local storage valyue back to an oblect by using JSON.parse()
+		var obj = JSON.parse(value); //I knew this!
+		var makeSubList = document.createElement("ul")
+		makeli.appendChild(makeSubList);
+		for (var n in obj){
+			var makeSubli = document.createElement("li");
+			makeSubList.appendChild(makeSubli);
+			var optSubText = obj[n][0]+ " "+obj[n][1];
+			makeSubli.innerHTML = optSubText;
+		}
+	}
+}
+
 //Variable defaults
-	var storeInfo = ["--Choose A Breed--", "Dogs", "Cats" ],
+	var breedInfo = ["--Choose A Breed--", "Dogs", "Cats" ],
 		sexValue;
 	chooseBreed();
 /*Set link and submit click events
-	var dbutton = $("dbutton");
-		dbutton.addEventListener("click", getData);
 	var rbutton = $("rbutton");
 		rbutton.addEventListener("click" , clearLocal);*/
+	var dbutton = $("dbutton");
+		dbutton.addEventListener("click", getData);
 	var sbutton = $("sbutton");
 		sbutton.addEventListener("click" , storeInfo);
 		
