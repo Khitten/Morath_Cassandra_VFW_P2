@@ -59,10 +59,11 @@ window.addEventListener("DOMContentLoaded", function(){
 	function storeInfo(){
 		var id = Math.floor(Math.random()*100000000001);
 		var item = {};
-			item.breed = ["Breeds:", $("breed").value];
+			
 			item.oname = ["Owner's Name:", $("oname").value];
 			item.onotes = ["Owner's Notes:", $("onotes").value];
 			item.pname = ["Pet's Name:", $("pname").value];
+			item.breed = ["Breed:", $("breed").value];
 			item.gdate = ["Groom Date:", $("gdate").value];
 			item.slider = ["Difficulty:", $("slider").value];
 			item.gnotes = ["Grooming Notes:", $("gnotes").value];
