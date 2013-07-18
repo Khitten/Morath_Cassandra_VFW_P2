@@ -6,122 +6,75 @@ By Cassandra Morath
 
 vfw project 2
 */
-<div style="overflow:auto; height:250px; width:300px;">
+<div style="overflow:auto; height:250px; width:300px;"/>
 
+html{
+	overflow-y: scroll;
+}
 @font-face{
-	font-family: "New Times Roman", Times, serif, Arial, Helvetica, sans-serif, "Comic Sans MS", cursive;
-	font-weight: normal;
-	font-style: normal;
+font-family: "New Times Roman", Times, serif, Arial, Helvetica, sans-serif, "Comic Sans MS", cursive;
+font-weight: normal;
+font-style: normal;
 }
 body{
-	text-align: center;
-	margin: 0;
-	padding: 25px 0px 0px 30px;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 100%;
-	line-height: normal;
-}
-html,body{
-	
-}
-
-h1, h2, h3, h4, h5, h6, p, div, ul{
-	margin:20px;
-	padding:0px;
-}
-p{
-	padding:10px;
-	margin:20px;
-	text-align:left;
-	color:#3F3;
-}
-a{
-	color:#3FF;
-}
-a:hover{
-	color: #FF0;
-	border-bottom: 1px dashed #cb7d20;
-}
-li{
-	list-style-type:none;
-}
-input[type="text"]{
-	width:200px;
-	display:block;
-	margin-bottom:10px;
-	background-color:white;
-}
-textarea{
-	width:200px;
-	display:block;
-	margin-bottom:10px;
-	background-color:white;
-}
-/*.slider{
-}      Need to figure out how to move the whole slider bar to center */
-li{
-	text-align:center;
+text-align: center;
+margin: 0;
+padding: 20px 0px 10px 30px;
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: 100%;
+line-height: normal;
+background-color:#CCC;
 }
 background{
-	color:#999
+background-color:#999;
+background-position:center;
+color:#999;
+margin:1em;
 }
-<!--LaunchPage CSS FIX ME!! -->
-    	<style>
-			background { 
-				margin:1em;
-				color:#999;
-			}
-			body {
-				background-color:#999;
-				background-position:center;
-			}
-			p {
-				margin:1px;
-				padding:1px;
-			    color:#000;
-			}
-			h1 {
-				color:#66F;
-				text-align:center;
-				font-size:30pt;
-				font-family:"Comic Sans MS", cursive;
-			}
-			nav{
-				margin-left:25px;
-				font-family:"Comic Sans MS", cursive;	
-			}
-			img{
-				border:solid;
-				margin:5px;
-				padding:1.5px;	
-			}
-		</style> 
-
-<!-- CSS style Pageadditem FIX ME! -->
-        <style>
-body {background-color:#CCC;
-}
-p {
-margin-left:10px;
+p{
+padding:10px;
+margin:20px;
+text-align:left;
 color:#000;
+}
+a{
+color:#006;
+}
+a:hover{
+color: #960;
+border-bottom: 1px dashed #cb7d20;
+}
+li{
+list-style-type:none;
+}
+input[type="text"]{
+width:200px;
+display:inline-block;
+margin-bottom:10px;
+background-color:white;
+}
+textarea{
+width:200px;
+display:inline-block;
+margin-bottom:10px;
+background-color:white;
+text-align:center;
+}
+li{
+text-align:center;
 }
 h1 {
 color:#66F;
 text-align:center;
-font-size:25pt;
-border-color:#66F;
+font-size:30pt;
 font-family:"Comic Sans MS", cursive;
 }
 nav{
-margin-left:200px;
+margin-left:25px;
 font-family:"Comic Sans MS", cursive;
 }
-li{
-text-align:left;
-color:#66F;
-font-family:"Comic Sans MS", cursive;
-font-size:15px;
-padding:0px;
-line-height:none;
+img{
+border:solid;
+margin:5px;
+padding:1.5px;
 }
-</style>
