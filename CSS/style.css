@@ -70,7 +70,7 @@ font-size:30pt;
 font-family:"Comic Sans MS", cursive;
 }
 nav{
-margin-left:25px;
+margin-left:center;
 font-family:"Comic Sans MS", cursive;
 }
 img{
@@ -78,3 +78,25 @@ border:solid;
 margin:5px;
 padding:1.5px;
 }
+fieldset { 
+border:1px solid green;
+alignment-adjust:central;
+margin:left;
+padding:0px 0px 0px 0px;
+}
+
+legend {
+padding: 0.2em 0.5em;
+border:1px solid green;
+color:green;
+font-size:90%;
+text-align:center;
+}
+h1, h2, h3, h4, h5, h6, div, ul{
+margin:20px;
+padding:0px;
+}
+/* I have been trying for hours to get the app to center. 
+The outter fieldset shouldn't have so much space on the left. 
+I will work on it again when I don't want to throw the computer across the room.*/
+
